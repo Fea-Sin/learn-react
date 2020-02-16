@@ -10,7 +10,7 @@
 - render()
 - componentDidMount()
 
-[static getDerivedStateFromProps](./static-getDerivedStateFromProps.md)
+[static getDerivedStateFromProps 详解](./static-getDerivedStateFromProps.md)
 
 ## 更新
 
