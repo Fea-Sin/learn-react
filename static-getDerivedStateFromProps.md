@@ -71,3 +71,5 @@ static getDerivedStateFromProps(nextProps, prevState) {
     : { someValue: nextProps.someValue }
 }
 ```
+
+[实例一](./src/pages/test/TestOne.js)

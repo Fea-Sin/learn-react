@@ -109,6 +109,17 @@ export default {
               name: 'welcome',
               icon: 'smile',
               component: './Welcome',
+            },{
+              path: '/test',
+              name: 'test',
+              icon: 'crown',
+              routes: [
+                {
+                  path: '/test/one',
+                  name: 'test-one',
+                  component: './test/TestOne',
+                }
+              ],
             },
             {
               path: '/admin',
