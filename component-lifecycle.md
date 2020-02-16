@@ -10,6 +10,8 @@
 - render()
 - componentDidMount()
 
+[static getDerivedStateFromProps](./static-getDerivedStateFromProps.md)
+
 ## 更新
 
 当组件的props或state发生变化时会触发更新。组件更新的生命周期调用顺序如下
