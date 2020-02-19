@@ -24,6 +24,8 @@
 
 [getSnapshotBeforeUpdate 详解](./getSnapshotBeforeUpdate.md)
 
+[componentDidUpdate 详解](./componentDidUpdate.md)
+
 > 注意
 > 下述方法即将过期，在新代码中应该避免使用它们
 > - componentWillUpdate()
