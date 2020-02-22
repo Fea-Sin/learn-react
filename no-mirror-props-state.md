@@ -72,7 +72,7 @@ React会创建一个新的而不是更新一个既有的组件。key 一般用�
 
 这是派生state的最好的方法。
 
-[实例1]()
+[实例二](./src/pages/test/TestTwo.js)
 
 [you should know key](./know-key.md)
 
@@ -126,4 +126,4 @@ class EmailInput extends Component {
 }
 ```
 然后父级组件可以使用ref调用这个方法。
-[实例2]()
+[实例三](./src/pages/test/TestThree.js)

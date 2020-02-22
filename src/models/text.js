@@ -3,7 +3,11 @@ const TestModal = {
   namespace: 'test',
 
   state: {
-    exampleA: '000'
+    exampleA: '000',
+    exampleB: {
+      userEmail: '456@qq.com',
+      userID: '456',
+    }
   },
   
   effects: {
@@ -27,7 +31,13 @@ const TestModal = {
         ...state,
         exampleA: payload,
       }
-    }
+    },
+    setTB(state, { payload }) {
+      return {
+        ...state,
+        exampleB: payload,
+      }
+    },
   }
 }
 

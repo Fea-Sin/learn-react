@@ -51,4 +51,6 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   'menu.test': '验证',
   'menu.test.test-one': '实例一',
+  'menu.test.test-two': '实例二',
+  'menu.test.test-three': '实例三',
 };

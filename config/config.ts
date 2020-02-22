@@ -118,7 +118,15 @@ export default {
                   path: '/test/one',
                   name: 'test-one',
                   component: './test/TestOne',
-                }
+                }, {
+                  path: '/test/two',
+                  name: 'test-two',
+                  component: './test/TestTwo',
+                }, {
+                  path: '/test/three',
+                  name: 'test-three',
+                  component: './test/TestThree',
+                },
               ],
             },
             {
