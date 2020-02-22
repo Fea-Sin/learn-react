@@ -22,7 +22,7 @@ state不一致就更新state。当一个派生state值也被setState方法更新
 用props传入数据的话，组件可以被认为是**受控**（因为组件被父级传入的props控制），数据只保存
 在组件内部的state的话，是**非受控**组件（因为外部没办法直接控制state）。
 
-### 完全可控的组件
+### 完全受控的组件
 
 完全可控的组件是，从组件里删除state，这样我们就没必要担心它和state冲突。
 
@@ -65,3 +65,65 @@ React会创建一个新的而不是更新一个既有的组件。key 一般用�
   key={this.props.user.id}
 />
 ```
+
+每次id更改，都会重新创建EmailInput，并将其状态重置为最新的defaultEmail值。
+使用此方法，不用每个输入都添加key，在整个表单上添加key更合理，每次key变化，表单里的所有组件都会
+用新的初始值重新创建。
+
+这是派生state的最好的方法。
+
+[实例1]()
+
+[you should know key](./know-key.md)
+
+## 重置非受控组件的其他方法
+
+- 用props的id重置非受控组件
+
+- 使用实例方法重置非受控组件
+
+### 用props的id重置非受控组件
+
+如果某些情况下key不起作用，一个麻烦但是可行的方案是在 getDerivedStateFromProps 观察userID的变化
+
+```js
+class EmailInput extends Component {
+  state = {
+    email: this.props.defaultEmail,
+    prevPropsUserID: this.props.userID
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // 只要当前 user 变化
+    // 重置所有跟user相关的状态
+    // 这个例子中，只有 email 和 user 相关
+    if (nextProps.userID !== prevState.prevPropsUserID) {
+      return {
+        prevPropsUserID: nextProps.userID,
+        email: nextProps.defaultEmail
+      }
+    }
+    return null
+  }
+}
+```
+
+### 使用实例方法重置非受控组件
+
+更少见的情况是，即没有合适的key，我们也想重置状态，使用实例方法重置内部状态。
+
+```js
+class EmailInput extends Component {
+  state = {
+    email: this.props.defaultEmail
+  }
+
+  resetEmailForNewUser(newEmail) {
+    this.setState({
+      email: newEmail
+    })
+  }
+}
+```
+然后父级组件可以使用ref调用这个方法。
+[实例2]()
