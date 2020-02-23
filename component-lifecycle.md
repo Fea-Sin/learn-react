@@ -26,6 +26,8 @@
 
 [componentDidUpdate 详解](./componentDidUpdate.md)
 
+[shouldComponentUpdate 详解](./shouldComponentUpdate.md)
+
 > 注意
 > 下述方法即将过期，在新代码中应该避免使用它们
 > - componentWillUpdate()
@@ -44,7 +46,7 @@
 - static getDerivedStateFromError()
 - componentDidCatch()
 
-
+[父组件和子组件生命周期函数执行顺序详见](./lifecycle-order.md)
 
 
 
