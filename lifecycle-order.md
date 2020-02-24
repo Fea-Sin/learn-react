@@ -28,6 +28,8 @@ state props 更新时
 
 ## 父组件与子组件渲染
 
+挂载时
+
 - 父组件 constructor
 - 父组件 getDerivedStateFromProps
 - 父组件 render
@@ -36,6 +38,8 @@ state props 更新时
 - 子组件 render
 - 子组件 componentDidMount
 - 父组件 componentDidMount
+
+更新时
 
 - 父组件 getDerivedStateFromProps
 - 父组件 shouldComponentUpdate
@@ -48,11 +52,15 @@ state props 更新时
 - 子组件 componentDidUpdate
 - 父组件 componentDidUpdate
 
+卸载时
+
 - 父组件 componentWillUnmount
 - 子组件 componentWillUnmount
 
 
 ## 父组件 子组件 孙组件同时渲染
+
+挂载时
 
 - 父组件 constructor
 - 父组件 getDerivedStateFromProps
@@ -66,6 +74,8 @@ state props 更新时
 - 孙组件 componentDidMount
 - 子组件 componentDidMount
 - 父组件 componentDidMount
+
+更新时
 
 - 父组件 getDerivedStateFromProps
 - 父组件 shouldComponentUpdate
@@ -82,6 +92,8 @@ state props 更新时
 - 孙组件 componentDidUpdate
 - 子组件 componentDidUpdate
 - 父组件 componentDidUpdate
+
+卸载时
 
 - 父组件 componentWillUnmount
 - 子组件 componentWillUnmount
