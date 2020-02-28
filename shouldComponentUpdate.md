@@ -145,4 +145,50 @@ class WordAdder extends React.Componet {
 }
 ```
 
-[实例五]()
+Component 没有问题，但PureComponent 会有问题
+
+[实例五](./src/pages/test/TestFive.js)
+
+
+## 不可变数据的力量
+
+避免该问题最简单的方式是避免更改你正用于 props 或 state 的值，因为这些数据都是
+引用数据类型。
+
+ES6 数组支持扩展运算符，这让代码写起来很方便
+
+```js
+handleClick() {
+  this.setState(state => ({
+    words: [...state.words, 'marklar']
+  }))
+}
+```
+
+如果你想改变一个对象的值，例如，我们希望将 colormap.right 设置为 'blue'
+
+```js
+function updateColorMap(colormap) {
+  colormap.right = 'blue';
+}
+```
+
+为了不改变原本的对象，我们可以使用Object.asssign方法
+```js
+function updateColorMap(colormap) {
+  return Object.assign({}, colormap, {right: 'blue'});
+}
+```
+现在 updateColorMap返回了一个新对象，而不是修改老对象。
+
+也可以使用对象扩展
+```js
+function updateColorMap(colormap) {
+  return {...colormap, right: 'blue'};
+}
+```
+
+当处理深层嵌套对象时，请参阅[Immer]()
+
+
+

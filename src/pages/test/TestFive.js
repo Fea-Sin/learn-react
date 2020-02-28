@@ -1,5 +1,6 @@
 import React from 'react';
-import ListOfWords from '@/components/TestComponent/ListWords';
+import ListOfWordsPure from '@/components/TestComponent/ListWordsPure';
+// import ListOfWords from '@/components/TestComponent/ListWords';
 
 class WordAdder extends React.Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class WordAdder extends React.Component {
     return (
       <div>
         <button onClick={this.handleClick}>添加</button>
-        <ListOfWords words={this.state.words} />
+        {/* <ListOfWords words={this.state.words} /> */}
+        <ListOfWordsPure words={this.state.words} />
       </div>
     );
   }
