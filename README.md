@@ -4,6 +4,8 @@
 
 [组件的生命周期](./component-lifecycle.md)
 
+[static getDerivedStateFromProps 详解](./static-getDerivedStateFromProps.md)
+
 [getSnapshotBeforeUpdate 详解](./getSnapshotBeforeUpdate.md)
 
 [componentDidUpdate 详解](./componentDidUpdate.md)
