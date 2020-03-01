@@ -188,7 +188,7 @@ function updateColorMap(colormap) {
 }
 ```
 
-当处理深层嵌套对象时，请参阅[Immer]()
+当处理深层嵌套对象时，请参阅 [Immer](./Immer.md)
 
 
 
