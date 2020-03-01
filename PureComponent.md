@@ -13,6 +13,7 @@ React.PureComponent可能提高性能。
 > 结构，则有可能因为无法检查深层的差别，产生错误的对比结果。仅在你的props和state较为简单时，才
 > 使用PureComponent，或者在深层次数据结构发生变化时调用forceUpdate()来确保组件被正确地更新
 > 你也可以考虑使用 immutable对象 加速嵌套数据的比较。
+> PureComponent 与 [Immer](./Immer.md) 是比较搭配的选择
 >
 > 此外，PureComponent中的shouldComponentUpdate()将跳过所有子组件树的props更新。因此，请
 > 确保所有子组件也都是"纯"的组件

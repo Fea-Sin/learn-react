@@ -32,5 +32,56 @@ const nextState = produce(baseState, draftState => {
 })
 ```
 
+## React setState example
+
+Deep updates in the state of React components can be greatly simplified as well
+by using immer.
+
+```js
+import produce from 'immer';
+
+state = {
+  user: {
+    name: 'Michel',
+    age: 33,
+  }
+}
+/**
+ * Classic React.setState with a deep merge
+ */
+handleClick1 = () => {
+  this.setState(state => ({
+    user: {
+      ...state.user,
+      age: state.user.age + 1
+    }
+  }))
+}
+
+/**
+ * Produce the next state before passing it to setState
+ */
+handleClick2 = () => {
+  this.setState(
+    produce(this.state, draft => {
+      draft.user.age += 1
+    })
+  )
+}
+
+/**
+ * Since setState accepts functions,
+ * we can just create curried producer
+ */
+handleClick3 = () => {
+  this.setState(
+    produce(draft => {
+      draft.user.age += 1
+    })
+  )
+}
+
+```
+
 
 [实例六](./src/pages/test/TestSix.js)

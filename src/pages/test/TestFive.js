@@ -1,6 +1,7 @@
 import React from 'react';
 import ListOfWordsPure from '@/components/TestComponent/ListWordsPure';
 // import ListOfWords from '@/components/TestComponent/ListWords';
+import produce from 'immer';
 
 class WordAdder extends React.Component {
   constructor(props) {
@@ -10,18 +11,26 @@ class WordAdder extends React.Component {
     };
   }
 
-  handleClick = () => {
-    // 这部分代码很糟
-    let words = this.state.words;
-    words.push('marklar');
-    this.setState({words: words});
-  }
+  // handleClick = () => {
+  //   // 这部分代码很糟
+  //   let words = this.state.words;
+  //   words.push('marklar');
+  //   this.setState({words: words});
+  // }
 
   // handleClick = () => {
   //   this.setState(state => ({
   //     words: state.words.concat(['marklar'])
   //   }))
   // }
+
+  handleClick = () => {
+    this.setState(
+      produce(draft => {
+        draft.words.push('marklar')
+      })
+    )
+  }
 
   render() {
     return (
