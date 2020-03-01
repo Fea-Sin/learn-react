@@ -2,6 +2,8 @@
 
 ## chapter one Basic
 
+[函数组件 vs class组件](./createComponent.md)
+
 [组件的生命周期](./component-lifecycle.md)
 
 [static getDerivedStateFromProps 详解](./static-getDerivedStateFromProps.md)
@@ -15,6 +17,8 @@
 [父组件和子组件生命周期函数执行顺序详见](./lifecycle-order.md)
 
 [PureComponent](./PureComponent.md)
+
+[不可变数据](./Immer.md)
 
 [Refs and the DOM](./ref.md)
 
