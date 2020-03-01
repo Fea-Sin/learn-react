@@ -14,6 +14,8 @@
 
 [父组件和子组件生命周期函数执行顺序详见](./lifecycle-order.md)
 
+[PureComponent](./PureComponent.md)
+
 [Ref](./ref.md)
 
 [UNSAFE 旧生命周期函数如何迁移]()
