@@ -138,6 +138,10 @@ export default {
                   path: '/test/six',
                   name: 'test-six',
                   component: './test/TestSix',
+                }, {
+                  path: '/test/seven',
+                  name: 'test-seven',
+                  component: './test/TestSeven',
                 },
               ],
             },

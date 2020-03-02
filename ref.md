@@ -96,7 +96,7 @@ function CustomTextInput(porps) {
 }
 ```
 
-##将DOM Refs暴露给父组件
+## 将DOM Refs暴露给父组件
 
 在极少情况下，你可能希望在父组件中引用子节点的DOM节点。通常不建议这样做，
 因为会打破组件的封装，但它偶尔可以用于触发焦点或测量子DOM节点的大小和位置。
@@ -107,5 +107,58 @@ Ref转发使组件可以像暴露自己的ref一样暴露组件的ref。
 如果你使用16.2或更低版本的React，或者你需要比ref转发更高的灵活性的 **回调Refs**
 
 ## 回调Refs
+
+React 也支持另一种设置refs的方式，称为‘回调refs’，它能帮助你更精细地控制何时refs被设置
+和解除
+
+不同于传递createRef()创建ref属性，你会传递一个函数，这个函数中接受React组件实例或
+HTML DOM元素作为参数，以使它们能在其他地方被存储和访问。
+
+```js
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props)
+    this.setTextInputRef = e => {
+      this.textInput = e
+    }
+  }
+
+  render() {
+    // 使用 ref 的回调函数将text输入框DOM节点的饮用存储到 React实例上
+    <div>
+      <input type='text' ref={this.setTextInputRef} />
+    </div>
+  }
+}
+```
+
+你可以在组件间传递回调形式的refs
+
+```js
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  )
+}
+
+class Parent extends React.Component {
+  render() {
+    return (
+      <CustomTextInput
+        inputRef={el => this.inputElement = el}
+      />
+    )
+  }
+}
+```
+
+关于回调refs，如果ref回调函数是以内联函数的方式定义的，在更新过程中它会被执行两次，
+第一次传入参数null，然后第二次会传入参数DOM元素，这是因为在每次渲染时会创建一个新的
+函数实例，所以React清空旧的ref并设置新的，可以通过将ref的回调函数定义成class的绑定函数
+的方式避免上述问题，但大多数情况下它是无关紧要的。
+
+[实例七](./src/pages/test/TestSeven.js)
 
 
