@@ -27,6 +27,7 @@ class Welcome extends React.Component {
 ```
 
 > **注意：组件的名称必须以大写字母开头**
+>
 > React 会将以小写字母开头的组件视为原生DOM标签，例如，<div /> 代表HTML的div标签，
 > 而 <Welcome /> 则代表一个组件，并且需要在作用域内使用。
 
