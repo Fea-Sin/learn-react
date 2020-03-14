@@ -57,5 +57,5 @@ ReactDOM.render(
 
 - 我们调用 ReactDOM.render() 函数，并传入 <Welcome name='feasin' /> 作为参数
 - React 调用 Welcome 组件，并将 { name: 'feasin' } 作为props传入
-- Welcome 组件将 <h1>hello, feasin</h1>元素作为返回值
-- ReactDOM 将 DOM 高效地更新为 <h1>hello, feasin</h1>
+- Welcome 组件将 `<h1>hello, feasin</h1>`元素作为返回值
+- ReactDOM 将 DOM 高效地更新为 `<h1>hello, feasin</h1>`
