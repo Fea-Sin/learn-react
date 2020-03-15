@@ -32,6 +32,10 @@
 
 [其他APIs](./other-api.md)
 
+[数据传导之Context](./context.md)
+
+[横切关注点Cross-Cutting-Concerns](./cross-cutting-concerns.md)
+
 ## chapter two use TypeScript with React
 
 ## chapter three HOOK

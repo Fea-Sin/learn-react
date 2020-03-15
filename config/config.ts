@@ -154,6 +154,10 @@ export default {
                   path: '/test/ten',
                   name: 'test-ten',
                   component: './test/TestTen',
+                }, {
+                  path: '/test/eleven',
+                  name: 'test-eleven',
+                  component: './test/TestEleven',
                 },
               ],
             },
