@@ -84,3 +84,148 @@ class ThemeButton extends React.Component {
   }
 }
 ```
+
+## React.createContext
+
+创建一个Context对象，当React渲染了一个订阅了这个Context对象的组件，这个组件会从组件树
+中离自身最近的那个匹配的 Provider 中读取当当前的 context 值。
+
+```js
+const MyContext = React.createContext(defaultValue)
+```
+
+只有当前组件所处的树中没有匹配到 Provider 时，其defaultValue参数才会生效，
+这有助于在不使用Provider包装组件的情况下对组件进行测试，注意，将 undefined 传递给 Provider
+的value时，消费组件的 defaultValue 不会生效。
+
+## Context.Provider
+
+每个 Context 对象都会返回一个 Provider React 组件，它允许消费组件订阅 context 的变化。
+Provider 接收一个 value 属性，传递给消费组件，一个 Provider 可以和多个消费组件对应关系，多个
+ Provider 也可以嵌套使用，里层的会覆盖外层的数据。
+
+ 当Provider的value值发生变化时，它内部的所有消费组件都会重新渲染。 Provider 及其内部 consumer 组件
+ 都不受制于 shouldComponentUpdate 函数，因此当 consumer 组件在其祖先组件 退出更新 的情况下
+ 也能更新。
+
+ ## class.contextType
+
+挂载在 class 上的 contextType 属性会被重赋值为一个由 React.createContext() 创建的
+Context 对象，这能让你使用 this.context 来消费最近 Context 上的那个值，你可以在任何
+生命周期函数中访问到它，包括 render 函数。
+
+> **注意**
+>
+> 这个API只能订阅单一 context
+> 如果你正在使用实验性的 public class fields 语法，你可以使用 static 这个类属性来初始化
+> 你的contextType
+
+```js
+class MyClass extends React.Component {
+  static contextType = MyContext;
+
+  render() {
+    const value = this.context;
+  }
+}
+```
+
+## Context.Consumer
+
+让你的**函数组件**中完成订阅context，这需要 **函数作为子元素(function as child)**这种模式。
+
+```js
+<MyContext.Consumer>
+  {value => (/* 基于 context 值进行渲染 */)}
+</MyContext.Consumer>
+```
+这个函数接收当前的context值，返回一个React节点，传递给函数的value值等同于往上组件树
+离这个context最近的Provider提供的value值，如果没有对应的Provider，value参数
+等同于传递给 createContext()的defaultValue值。
+
+## 注意事项
+
+因为context会使用参考标识（reference identity）来决定何时进行渲染，这里可能会有一些
+陷阱，当provider的父组件进行重渲染时，可能会在 consumer 组件中触发意外的渲染
+
+示例
+
+```js
+class App extends React.Component {
+  render() {
+    <Provider value={{something: 'some value'}}>
+      <Toolbar />
+    </Provider>
+  }
+}
+```
+当每一次Provider重新渲染时，provider下的所有 consumer 组件都会重新渲染，因为
+value 属性总是被赋予新的对象。
+
+为防止这种情况，将value状态提升到父节点的 state 里。
+
+```js
+class App extends React.Component {
+  state = {
+    value: {something: 'some value'}
+  }
+
+  render() {
+    return (
+      <Provider value={this.state.value}>
+        <Toolbar />
+      </Provider>
+    )
+  }
+}
+```
+
+## 在嵌套组件中更新 Context
+
+从一个组件树中嵌套很深的组件中更新 context 是很必要的，你可以通过
+context 传递一个函数，使得consumers组件更新context。
+
+`theme-context.js`
+```js
+// 确保传递给 createContext 的默认值数据结构时调用组件 consumer 所能匹配的
+export default ThemeContext = React.createContext({
+  theme: themes.dark,
+  toggleTheme: () => {},
+})
+```
+
+`theme-toggle-button.js`
+```js
+import { ThemeContext } from './theme-context';
+
+function ThemeToggleButton() {
+  return (
+    <ThemeContext.Consumer>
+      {
+        ({theme, toggleTheme}) => (
+          <button
+            onClick={toggleTheme}
+            style={{backgroundColor: theme.background}}
+          >
+            Toggle Theme
+          </button>
+        )
+      }
+    </ThemeContext.Consumer>
+  )
+}
+export default ThemeToggleButton;
+```
+
+`app.js`
+```js
+import { ThemeContext, themes } from './theme-context';
+import ThemeToggleButton from './theme-toggle-button';
+
+class App extends React.Component {
+
+  render() {
+    
+  }
+}
+```
