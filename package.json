@@ -40,11 +40,12 @@
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
     "tsc": "tsc",
-    "ui": "umi ui"
+    "ui": "umi ui",
+    "hello": "echo \"ship lint\""
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
+      "pre-commit": "npm run hello"
     }
   },
   "lint-staged": {

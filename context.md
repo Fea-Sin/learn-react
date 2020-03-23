@@ -132,7 +132,7 @@ class MyClass extends React.Component {
 
 ## Context.Consumer
 
-让你的**函数组件**中完成订阅context，这需要 **函数作为子元素(function as child)**这种模式。
+让你的**函数组件**中完成订阅context，这需要**函数作为子元素(function as child)**这种模式。
 
 ```js
 <MyContext.Consumer>
@@ -223,9 +223,28 @@ import { ThemeContext, themes } from './theme-context';
 import ThemeToggleButton from './theme-toggle-button';
 
 class App extends React.Component {
-
+  this.state = {
+    context: {
+      theme: themes.light,
+      toggleTheme: this.toggleTheme,
+    }
+  }
   render() {
-    
+    return (
+      <ThemeContext.Provider value={this.state.context}>
+        <Content />>
+      </ThemeContext.Provider>
+    )
   }
 }
+
+function Content() {
+  return (
+    <div>
+      <ThemeToggleButton />
+    </div>
+  )
+}
+
+ReactDOM.render(<App />, document.root)
 ```
