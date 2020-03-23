@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeContextT, themes } from '@/context/ThemeContext';
 import ThemeToggleButton from '@/components/TestComponent/ThemeToggleButton';
+import product from 'immer';
 
 function Content() {
   return (
@@ -16,12 +17,25 @@ class App extends React.Component {
     super(props)
 
     this.toggleTheme = () => {
-      console.log('jjjj---')
+
+      // 使用 immer 注意事项
+      // immer 会改变原始 引用数据 值
+      // 因此不能使用引用数据作为等值判断
+
+      // this.setState(
+      //   product(draft => {
+      //     draft.context.theme = draft.context.theme.color1 === themes.dark.color1
+      //       ? themes.light
+      //       : themes.dark
+      //   })
+      // )
       this.setState(state => ({
-        theme: 
-          state.theme === themes.dark
-            ? themes.light
-            : themes.dark
+        context: {
+          ...state.context,
+          theme: state.context.theme === themes.dark
+          ? themes.light
+          : themes.dark
+        }
       }))      
     }
 
