@@ -162,6 +162,10 @@ export default {
                   path: '/test/twelve',
                   name: 'test-twelve',
                   component: './test/TestTwelve',
+                }, {
+                  path: '/test/thirteen',
+                  name: 'test-thirteen',
+                  component: './test/TestThirteen',
                 },
               ],
             },

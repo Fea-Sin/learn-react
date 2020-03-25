@@ -248,3 +248,61 @@ function Content() {
 
 ReactDOM.render(<App />, document.root)
 ```
+
+## 消费多个Context
+
+为了确保context快速进行重渲染，React需要使每一个consumers组件的context在组件树
+中成为一个单独的节点。
+
+```js
+// Theme context 默认的theme是light值
+const ThemeContext = React.createContext('light')
+
+// 用户登录 context
+const UserContext = React.createContext({
+  name: 'Guest',
+})
+
+class App extends React.Component {
+  render() {
+    const { signedInUser, theme } = this.props
+
+    // 提供初始 context 值的App组件
+    return (
+      <ThemeContext.Provider value={theme}>
+        <UserContext.Provider value={signedInUser}>
+          <Layout />
+        </UserContext.Provider>
+      </ThemeContext.Provider>
+    )
+  }
+}
+
+function Layout() {
+  return (
+    <div>
+      <Sidebar />
+      <Content />
+    </div>
+  )
+}
+
+// 一个组件可能消费多个 context
+function Content() {
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <UserContext.Consumer>
+          {user => (
+            <ProfilePage user={user} theme={theme}>
+          )}
+        </UserContext.Consumer>
+      )}
+    </ThemeContext.Consumer>
+  )
+}
+```
+如果两个或者更多的context值经常被一起使用，那你可以考虑一下另外创建你自己的渲染组件，
+以提供这些值。
+
+[示例十三](./src/pages/test/TestThirteen.js)

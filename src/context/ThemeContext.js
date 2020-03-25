@@ -17,3 +17,7 @@ export const ThemeContextT = React.createContext({
   theme: themes.dark,
   toggleTheme: () => {},
 })
+
+export const UserContext = React.createContext({
+  name: 'Guest'
+})
