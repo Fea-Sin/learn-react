@@ -85,3 +85,15 @@ handleClick3 = () => {
 
 
 [实例六](./src/pages/test/TestSix.js)
+
+## 片段数据
+
+```js
+const state = {
+  x: 0
+}
+
+const nextState = produce(state, draft => {
+  draft.x = draft.x + 1;
+})
+```
