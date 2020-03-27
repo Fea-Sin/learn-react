@@ -42,3 +42,15 @@ const FunComponent: React.FC<FunComponentProps> = ({
 }
 
 ```
+
+## type 类型
+
+- React.ReactNode
+
+- React.ComponentClass
+
+- React.FunctionComponent
+
+- React.FC<TestProps>
+
+- React.SFC<TestProps> stateless 无状态组件

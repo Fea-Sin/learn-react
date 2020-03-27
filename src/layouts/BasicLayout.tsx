@@ -123,6 +123,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
     authority: undefined,
   };
 
+  // console.log('权限路由----', authorized)
+
   return (
     <ProLayout
       logo={logo}
@@ -164,7 +166,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
       {...props}
       {...settings}
     >
-      <Authorized authority={authorized!.authority} noMatch={noMatch}>
+      <Authorized authority={authorized.authority} noMatch={noMatch}>
         {children}
       </Authorized>
     </ProLayout>
