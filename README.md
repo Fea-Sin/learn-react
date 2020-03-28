@@ -34,7 +34,7 @@
 
 [数据传导之Context](./context.md)
 
-[横切关注点Cross-Cutting-Concerns](./cross-cutting-concerns.md)
+[横切关注点Cross-Cutting-Concerns](./render-prop.md)
 
 ## chapter two use TypeScript with React
 
