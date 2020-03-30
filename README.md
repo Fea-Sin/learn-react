@@ -36,6 +36,10 @@
 
 [横切关注点Cross-Cutting-Concerns](./render-prop.md)
 
+[代码分割](./lazy-suspense.md)
+
+[错误边界](./error-boundaries.md)
+
 ## chapter two use TypeScript with React
 
 [Compoent-type 如何写一个TS React 组件](component-type.md)
