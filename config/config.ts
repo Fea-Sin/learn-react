@@ -174,6 +174,10 @@ export default {
                   path: '/test/fifteen',
                   name: 'test-fifteen',
                   component: './test/TestFifteen',
+                }, {
+                  path: '/test/sixteen',
+                  name: 'test-sixteen',
+                  component: './test/TestSixteen',
                 },
               ],
             },

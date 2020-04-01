@@ -46,6 +46,9 @@ class ErrorBoundary extends React.Component {
   <MyWidget />
 </ErrorBoundary>
 ```
+> **注意**
+>
+> 只有它包裹的**子组件**出现报错，才会捕获。如果是children元素出现报错并不能捕获(亲测如  此)
 
 错误边界的工作方式类似于JavaScript的 catch{}，不同的地方在于错误边界
 只针对React组件，只有class组件才可以成为错误边界组件大多数情况下，你只需要

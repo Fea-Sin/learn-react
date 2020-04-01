@@ -65,4 +65,5 @@ export default {
   'menu.test.test-thirteen': '实例十三',
   'menu.test.test-fourteen': '实例十四',
   'menu.test.test-fifteen': '实例十五',
+  'menu.test.test-sixteen': '实例十六',
 };
