@@ -45,3 +45,9 @@
 [Compoent-type 如何写一个TS React 组件](component-type.md)
 
 ## chapter three HOOK
+
+[Hook概览](./hook-overview.md)
+
+[Effect Hook](./effect-hook.md)
+
+[自定义Hook](./self-hook.md)

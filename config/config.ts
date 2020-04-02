@@ -178,7 +178,12 @@ export default {
                   path: '/test/sixteen',
                   name: 'test-sixteen',
                   component: './test/TestSixteen',
+                }, {
+                  path: '/test/seventeen',
+                  name: 'test-seventeen',
+                  component: './test/TestSeventeen',
                 },
+                
               ],
             },
             {
