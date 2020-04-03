@@ -45,3 +45,12 @@ function ExampleWithManyStates() {
   const [todos, setTodos] = useState([{text: 'Learn Hooks'}])
 }
 ```
+
+### Hook 使用规则
+
+Hook 就是JavaScript函数，但是使用它们会有两个额外的规则
+
+- 只能在函数最外层调用Hook，不要在循环、条件判断或者子函数中调用
+
+- 只能在React的函数组件中调用Hook，不要在其他JavaScript函数中调用，还有一个地方可以调用Hook
+就是自定义Hook中。
