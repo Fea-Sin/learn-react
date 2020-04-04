@@ -114,4 +114,46 @@ Hook 允许我们按照代码的用途分离它们，而不是像生命周期那
 
 ### 通过跳过Effect进行性能优化
 
+在某些情况下，每次渲染后都执行清理或着执行effect可能导致性能问题，在class组件中我们
+可以通过在componentDidUpdate中加添对prevProps或prevState的比较逻辑解决。
 
+```js
+componentDidUpdate(prevProps, prevState) {
+  if (prevState.count !== this.state.count) {
+    document.title = `You clicked ${this.state.count} times`
+  }
+}
+```
+
+这是很常见的需求，所以它被内置到了 useEffect 的Hook API中，如果某些特定值在两次重渲染
+之间没有发生变化，你可以通知React跳过对effect的调用，只要传递数组作为useEffect的第二个
+可选参数即可。
+
+```js
+useEffect(() => {
+  document.title = `You clicked ${count} times`;
+}, [count]); // 仅在count更新时更新
+```
+如果数组中有多个元素，即使只有一个元素发生变化，React也会执行effect。
+
+对于有清除操作的effect同样使用
+```js
+useEffect(() => {
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline)
+  }
+
+  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+  return () => {
+    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+  }
+}, [props.friend.id]) // 仅在props.friend.id 发生变化时，重新订阅
+```
+
+> **注意**
+>
+> 如果你要使用此优化方式，请确保数组中包含了所有外部作用域中会随时间变化并且在effect中使用
+> 的变量，否则可能无法渲染最新的值
+>
+> 如果只想运行一次effect（仅在组件挂载和卸载时执行），可以传递一个空数组（[]），作为第二个参数
+> 这就告诉React你的effect不依赖props和state中的任何值，所以它永远都不需要重复执行。
