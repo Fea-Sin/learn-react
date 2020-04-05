@@ -186,6 +186,10 @@ export default {
                   path: '/test/eighteen',
                   name: 'test-eighteen',
                   component: './test/TestEighteen',
+                }, {
+                  path: '/test/nineteen',
+                  name: 'test-nineteen',
+                  component: './test/TestNineteen',
                 },
               ],
             },
