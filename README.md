@@ -40,6 +40,8 @@
 
 [错误边界](./error-boundaries.md)
 
+[Portals](./portals.md)
+
 ## chapter two use TypeScript with React
 
 [Compoent-type 如何写一个TS React 组件](component-type.md)
