@@ -1,6 +1,6 @@
 ## learn-react
 
-## chapter one Basic
+## 第一章 Basic
 
 [函数组件 vs class组件](./createComponent.md)
 
@@ -42,7 +42,7 @@
 
 [Portals](./portals.md)
 
-## chapter two use TypeScript with React
+## 第二章 TypeScript with React
 
 [Compoent-type 如何写一个TS React 组件](./TS-REACT/component-type.md)
 
@@ -50,7 +50,7 @@
 
 [utility-types](./TS-REACT/utility-types.md)
 
-## chapter three HOOK
+## 第三章 HOOK
 
 [Hook概览](./hook-overview.md)
 
