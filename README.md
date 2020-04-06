@@ -44,7 +44,11 @@
 
 ## chapter two use TypeScript with React
 
-[Compoent-type 如何写一个TS React 组件](component-type.md)
+[Compoent-type 如何写一个TS React 组件](./TS-REACT/component-type.md)
+
+[react component 中的type](./component-ts-type.md)
+
+[utility-types](./TS-REACT/utility-types.md)
 
 ## chapter three HOOK
 
