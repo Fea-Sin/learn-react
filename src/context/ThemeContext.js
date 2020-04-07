@@ -2,6 +2,8 @@ import React from 'react';
 
 export const ThemeContext = React.createContext('dark');
 
+export const ThemeContextUse = React.createContext('red');
+
 export const themes = {
   light: {
     color1: '#000',

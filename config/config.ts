@@ -190,6 +190,10 @@ export default {
                   path: '/test/nineteen',
                   name: 'test-nineteen',
                   component: './test/TestNineteen',
+                }, {
+                  path: '/test/twenty',
+                  name: 'test-twenty',
+                  component: './test/TestTwenty',
                 },
               ],
             },
