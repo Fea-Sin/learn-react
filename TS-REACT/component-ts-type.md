@@ -1,6 +1,8 @@
 
 ## react component ts type
 
-- css: 
+- style: React.CSSProperties
 
 - dom: React.ReactNode
+
+- component: React.ComponentClass<any, any>
