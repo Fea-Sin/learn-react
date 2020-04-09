@@ -194,8 +194,24 @@ export default {
                   path: '/test/twenty',
                   name: 'test-twenty',
                   component: './test/TestTwenty',
+                }, {
+                  path: '/test/twenty-one',
+                  name: 'test-twenty-one',
+                  component: './test/TestTwentyOne',
                 },
               ],
+            },
+            {
+              path: '/test-ts',
+              name: 'test-ts',
+              icon: 'crown',
+              routes: [
+                {
+                  path: '/test-ts/one',
+                  name: 'test-ts-one',
+                  component: './test-ts/TestOne',
+                }
+              ]
             },
             {
               path: '/admin',

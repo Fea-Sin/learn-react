@@ -49,6 +49,7 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  
   'menu.test': '验证',
   'menu.test.test-one': '实例一',
   'menu.test.test-two': '实例二',
@@ -70,4 +71,8 @@ export default {
   'menu.test.test-eighteen': '实例十八',
   'menu.test.test-nineteen': '实例十九',
   'menu.test.test-twenty': '实例二十',
+  'menu.test.test-twenty-one': '实例二十一',
+
+  'menu.test-ts': 'T验证',
+  'menu.test-ts.test-ts-one': 'T实例一',
 };
