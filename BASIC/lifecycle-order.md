@@ -100,4 +100,4 @@ state props 更新时
 - 孙组件 componentWillUnmount
 
 
-[实例四](./src/pages/test/TestFour.js)
+[实例四](../src/pages/test/TestFour.js)

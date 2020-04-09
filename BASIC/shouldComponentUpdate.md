@@ -147,7 +147,7 @@ class WordAdder extends React.Componet {
 
 Component 没有问题，但PureComponent 会有问题
 
-[实例五](./src/pages/test/TestFive.js)
+[实例五](../src/pages/test/TestFive.js)
 
 
 ## 不可变数据的力量

@@ -72,4 +72,4 @@ static getDerivedStateFromProps(nextProps, prevState) {
 }
 ```
 
-[实例一](./src/pages/test/TestOne.js)
+[实例一](../src/pages/test/TestOne.js)

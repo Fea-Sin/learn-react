@@ -95,4 +95,4 @@ function Child() {
 }
 ```
 
-[实例十九](./src/pages/test/TestNineteen.js)
+[实例十九](../src/pages/test/TestNineteen.js)

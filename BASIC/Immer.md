@@ -84,7 +84,7 @@ handleClick3 = () => {
 ```
 
 
-[实例六](./src/pages/test/TestSix.js)
+[实例六](../src/pages/test/TestSix.js)
 
 ## 片段数据
 

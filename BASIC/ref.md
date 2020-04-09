@@ -159,6 +159,6 @@ class Parent extends React.Component {
 函数实例，所以React清空旧的ref并设置新的，可以通过将ref的回调函数定义成class的绑定函数
 的方式避免上述问题，但大多数情况下它是无关紧要的。
 
-[实例七](./src/pages/test/TestSeven.js)
+[实例七](../src/pages/test/TestSeven.js)
 
 

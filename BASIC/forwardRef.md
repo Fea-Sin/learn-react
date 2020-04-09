@@ -41,7 +41,7 @@ class Example extends React.Component {
 >
 > Ref转发不仅限于DOM组件，你也可以转发refs到class组件
 
-[实例八](./src/pages/test/TestEight.js)
+[实例八](../src/pages/test/TestEight.js)
 
 ## 在高阶组件中转发refs
 
@@ -96,4 +96,4 @@ function logProps(Component) {
 }
 ```
 
-[实例九](./src/pages/test/TestNine.js)
+[实例九](../src/pages/test/TestNine.js)
