@@ -52,6 +52,8 @@
 
 [utility-types](./TS-REACT/utility-types.md)
 
+[对象的类型-接口](./TS-REACT/interfaces.md)
+
 ## 第三章 HOOK
 
 [Hook概览](./HOOK/hook-overview.md)
