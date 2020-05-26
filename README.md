@@ -28,7 +28,7 @@
 
 [Ref转发](./BASIC/forwardRef.md)
 
-[UNSAFE 旧生命周期函数如何迁移]()
+[UNSAFE 旧生命周期函数如何迁移](./BASIC/unsafe-lifecycle.md)
 
 [PureComponent vs Component](./BASIC/PureComponent.md)
 
