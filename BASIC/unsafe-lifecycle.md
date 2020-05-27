@@ -5,8 +5,9 @@ React 16.3 引入了新的生命周期方法，一些生命周期方法将在Rea
 
 下叙方法即将过期，在新代码中应避免使用
 
-- componentWillUpdate()
+- componentWillMount()
 - componentWillReceiveProps()
+- componentWillUpdate()
 
 ## 如何将 componentWillReceiveProps 用新的生命周期方法替代
 
@@ -47,6 +48,7 @@ getDerivedStateFromProps 是 static method，在实例初始化及组件接收�
 获取`this`，及调用class method。
 
 > 可以对比 nextProps.someValue 与 this.props.someValue 的值，做业务处理
+>
 > 也可以，对比 nextProps.someValue 与 this.state.someValue 的值，
 > 来执行操作
 
