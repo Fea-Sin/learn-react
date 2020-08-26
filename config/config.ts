@@ -198,6 +198,10 @@ export default {
                   path: '/test/twenty-one',
                   name: 'test-twenty-one',
                   component: './test/TestTwentyOne',
+                },{
+                  path: '/test/twenty-two',
+                  name: 'test-twenty-two',
+                  component: './test/TestTwentyTwo',
                 },
               ],
             },
